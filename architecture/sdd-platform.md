@@ -147,38 +147,38 @@ Agent roles are defined declaratively (system prompt, tools, escalation triggers
 
 ```mermaid
 sequenceDiagram
-    participant PM as PM (Author)
+    participant PM as PM Author
     participant Sp as Spec Repo
     participant AG as Agent Runner
     participant TL as Tech Lead
     participant Reg as Schema Registry
     participant CI as CI Pipeline
-    participant Reg2 as Artifact Registry
+    participant AR as Artifact Registry
     participant Del as Progressive Delivery
     participant Obs as Observability
 
-    PM->>Sp: Open spec PR (draft)
-    Sp->>AG: Spec lint + clarify-agent run
-    AG-->>PM: Findings (gaps, clarifications)
-    PM->>Sp: Update spec; merge after G1+G2
-    TL->>Sp: Open design + tasks PR
+    PM->>Sp: Open draft spec PR
+    Sp->>AG: Spec lint and clarify agent
+    AG-->>PM: Findings — gaps and clarifications
+    PM->>Sp: Update spec; merge after G1 and G2
+    TL->>Sp: Open design and tasks PR
     Sp->>Reg: Register contract diffs
-    Sp->>AG: Critique-agent on design
+    Sp->>AG: Critique agent on design
     AG-->>TL: Critique findings
     TL->>Sp: Merge after G3
 
     loop For each task
-        AG->>Sp: Implementation PR (TDD: red→green→refactor)
+        AG->>Sp: Implementation PR — TDD red, green, refactor
         CI->>Sp: Lint, test, drift, policy checks
-        TL->>Sp: Review + merge after G4
+        TL->>Sp: Review and merge after G4
     end
 
-    CI->>Reg2: Build, sign, attach SBOM
-    CI->>Sp: Validation report (G5)
-    Reg2->>Del: Promote RC
-    Del->>Obs: Canary → ramp with SLO checks
+    CI->>AR: Build, sign, attach SBOM
+    CI->>Sp: Validation report — G5
+    AR->>Del: Promote RC
+    Del->>Obs: Canary then ramp with SLO checks
     Obs->>Sp: Spec health continuous check
-    Obs->>PM: User signal → next spec
+    Obs->>PM: User signal feeds next spec
 ```
 
 The flow is the same whether a step is taken by a human, an agent, or both.

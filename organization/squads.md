@@ -54,10 +54,10 @@ Boundaries are documented in a machine-readable `ownership.yaml` consumed by the
 ```mermaid
 flowchart TB
     subgraph Strategy
-        CTO[CTO]
-        VPP[VP Product]
-        VPE[VP Engineering]
-        VPD[VP Design]
+        CIO[CIO]
+        DDP[DD Product]
+        DDE[DD Engineering]
+        DDD[DD Design]
     end
 
     subgraph Horizontals[Horizontal Functions]
@@ -74,13 +74,13 @@ flowchart TB
         S4[Squad: Discovery<br/>PM • TL • Eng×4 • UX • QA]
     end
 
-    CTO --> VPE
-    CTO --> VPP
-    CTO --> VPD
-    VPE --> Plat
-    VPE --> Sec
-    VPE --> Arch
-    VPP --> Res
+    CIO --> DDE
+    CIO --> DDP
+    CIO --> DDD
+    DDE --> Plat
+    DDE --> Sec
+    DDE --> Arch
+    DDP --> Res
 
     Arch -.standards.-> Squads
     Plat -.platform.-> Squads

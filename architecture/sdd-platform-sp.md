@@ -159,8 +159,8 @@ sequenceDiagram
 
     PM->>Sp: Abre PR de spec borrador
     Sp->>AG: Lint de spec y clarify agent
-    AG-->>PM: Hallazgos — brechas y clarificaciones
-    PM->>Sp: Actualiza spec; merge tras G1 y G2
+    AG-->>PM: Hallazgos - brechas y clarificaciones
+    PM->>Sp: Actualiza spec, merge tras G1 y G2
     TL->>Sp: Abre PR de diseño y tareas
     Sp->>Reg: Registra diffs de contratos
     Sp->>AG: Critique agent sobre el diseño

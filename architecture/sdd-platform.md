@@ -159,8 +159,8 @@ sequenceDiagram
 
     PM->>Sp: Open draft spec PR
     Sp->>AG: Spec lint and clarify agent
-    AG-->>PM: Findings — gaps and clarifications
-    PM->>Sp: Update spec; merge after G1 and G2
+    AG-->>PM: Findings - gaps and clarifications
+    PM->>Sp: Update spec, merge after G1 and G2
     TL->>Sp: Open design and tasks PR
     Sp->>Reg: Register contract diffs
     Sp->>AG: Critique agent on design
